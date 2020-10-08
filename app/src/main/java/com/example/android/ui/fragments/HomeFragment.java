@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.Nullable;
+import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -45,6 +46,17 @@ public class HomeFragment extends BaseFragmentWithViewModel<HomeViewModel, HomeF
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
 
+        viewModel.getShimmerEvent().observe(getViewLifecycleOwner(), new Observer<Boolean>() {
+            @Override
+            public void onChanged(Boolean aBoolean) {
+                if (aBoolean) {
+                    dataBinding.recyclerView.showShimmerAdapter();
+                } else {
+                    dataBinding.recyclerView.hideShimmerAdapter();
+                }
+            }
+        });
+
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
 
         dataBinding.recyclerView.setLayoutManager(layoutManager);
@@ -52,6 +64,10 @@ public class HomeFragment extends BaseFragmentWithViewModel<HomeViewModel, HomeF
         PostsAdapter postsAdapter = new PostsAdapter(getActivity());
 
         dataBinding.recyclerView.setAdapter(postsAdapter);
+
+        dataBinding.emptyView.setTitle("Nothing found");
+        dataBinding.emptyView.setDescription("Sorry! but there is nothing to show now");
+        dataBinding.recyclerView.setEmptyView(dataBinding.emptyView);
 
         viewModel.getAllPosts();
 
