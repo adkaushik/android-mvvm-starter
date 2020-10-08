@@ -12,6 +12,6 @@ import retrofit2.http.GET;
  */
 public interface ApiService {
 
-    @GET("/posts")
+    @GET("/postse")
     Call<List<Post>> getPosts();
 }

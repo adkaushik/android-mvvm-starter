@@ -12,8 +12,17 @@ public abstract class BaseViewModel<T> extends ViewModel {
     protected final ObservableBoolean loading = new ObservableBoolean(false);
     protected final ObservableBoolean isEmpty = new ObservableBoolean(false);
 
+    protected SingleLiveEvent<Boolean> shimmerEvent = new SingleLiveEvent<>();
+
     public ObservableList<T> getItems() {
         return items;
     }
 
+    public SingleLiveEvent<Boolean> getShimmerEvent() {
+        return shimmerEvent;
+    }
+
+    public ObservableBoolean getIsEmpty() {
+        return isEmpty;
+    }
 }

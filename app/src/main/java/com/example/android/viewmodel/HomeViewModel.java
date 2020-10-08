@@ -14,15 +14,13 @@ public class HomeViewModel extends BaseViewModel<Post> {
 
     private final Repository repository;
 
-    // Live data
-    private SingleLiveEvent<Void> postFetchEvent = new SingleLiveEvent<>();
-
     @ViewModelInject
     HomeViewModel(Repository repository) {
         this.repository = repository;
     }
 
     public void getAllPosts() {
+        shimmerEvent.setValue(true);
         repository.getAllPosts(new DataSource.NetworkResponseCallback<List<Post>>() {
             @Override
             public void getPaginationResponse(List<Post> paginationResponse) {
@@ -31,13 +29,19 @@ public class HomeViewModel extends BaseViewModel<Post> {
 
             @Override
             public void getResponse(List<Post> response) {
-                postFetchEvent.call();
+                shimmerEvent.setValue(false);
+                if (response.size() == 0) {
+                    isEmpty.set(true);
+                } else {
+                    isEmpty.set(false);
+                }
                 items.addAll(response);
             }
 
             @Override
             public void handleFailure(String apiName, int statusCode) {
-                postFetchEvent.call();
+                shimmerEvent.setValue(false);
+                isEmpty.set(true);
             }
         });
     }

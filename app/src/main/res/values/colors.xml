@@ -30,6 +30,6 @@
     <color name="lightBackground2">#E4E4E4</color>
     <color name="lightText5">#CCF8F8FA</color>
     <color name="lightText6">#90909F</color>
-
+    <color name="shimmerColor">#66FFFFFF</color>
     <color name="primary_light">#FAFAFA</color>
 </resources>

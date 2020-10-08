@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+        <import type="android.view.View" />
         <variable
             name="viewmodel"
             type="com.example.android.viewmodel.HomeViewModel" />
@@ -14,7 +15,16 @@
         android:layout_height="match_parent"
         tools:context="com.example.android.ui.fragments.HomeFragment">
 
-        <androidx.recyclerview.widget.RecyclerView
+        <com.example.android.views.EmptyView
+            android:visibility="@{viewmodel.isEmpty?View.VISIBLE:View.GONE}"
+            android:id="@+id/empty_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <com.example.android.views.EmptyRecyclerView
+            app:shimmer_demo_layout="@layout/home_item_shimmer_layout"
+            app:shimmer_demo_child_count="4"
+            app:shimmer_demo_layout_manager_type="linear_vertical"
             android:id="@+id/recyclerView"
             list="@{viewmodel.items}"
             android:layout_margin="12dp"
