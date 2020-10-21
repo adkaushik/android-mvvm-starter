@@ -4,14 +4,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     >
-    <RelativeLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:theme="@style/AppTheme"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <com.google.android.material.appbar.AppBarLayout
+            android:background="@color/white"
+            android:elevation="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize" />
+
        <FrameLayout
+           android:layout_marginTop="?attr/actionBarSize"
+           android:layout_marginBottom="57dp"
            android:layout_width="match_parent"
            android:layout_height="match_parent"
            android:id="@+id/frameLayout"/>
 
-    </RelativeLayout>
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/navigation"
+            android:elevation="20dp"
+            android:layout_gravity="bottom"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            app:menu="@menu/navigation"
+            app:itemIconTint="@color/nav_item_selector"
+            app:itemTextColor="@color/nav_item_selector"
+            />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

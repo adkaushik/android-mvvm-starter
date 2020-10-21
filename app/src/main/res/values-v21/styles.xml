@@ -1,15 +1,50 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/darkText1</item>
+        <item name="colorPrimaryDark">@color/lightBackground1</item>
+        <item name="colorAccent">@color/lightPrimary2</item>
+        <item name="android:statusBarColor">@color/lightBackground2</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
 
-        <item name="android:windowBackground">@color/darkBackground1</item>
-        <item name="android:colorBackground">@color/darkBackground1</item>
+        <item name="android:windowBackground">@color/lightBackground1</item>
+        <item name="android:colorBackground">@color/lightBackground1</item>
         <item name="android:navigationBarColor">@color/darkText4</item>
 
+        <item name="primaryTextColor">@color/lightShadeText1</item>
+        <item name="secondaryTextColor">@color/lightText2</item>
+        <item name="hintTextColor">@color/hint_color</item>
+        <item name="disabledTextColor">@color/lightBackground2</item>
+        <item name="tabBackground">@color/lightBackground2</item>
+        <item name="dividerColor">@color/lightBackground2</item>
+
+        <item name="cardBackgroundColor">@color/lightBackground2</item>
     </style>
+
+    <style name="NavBar" parent="Widget.Design.BottomNavigationView">
+        <item name="android:background">@color/darkText4</item>
+        <item name="colorPrimary">@android:color/white</item>
+        <item name="colorPrimaryDark">@android:color/white</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorOnSurface">@color/colorAccent</item>
+    </style>
+
+    <declare-styleable name="ds">
+        <attr name="primaryTextColor" format="color" />
+        <attr name="secondaryTextColor" format="color" />
+        <attr name="subtitleTextColor" format="color" />
+        <attr name="hintTextColor" format="color" />
+        <attr name="headerTextColor" format="color" />
+        <attr name="darkBackground" format="color" />
+        <attr name="completeTickColor" format="color" />
+        <attr name="dividerColor" format="color" />
+        <attr name="buttonColor" format="color" />
+        <attr name="secondaryButtonColor" format="color" />
+        <attr name="disabledTextColor" format="color" />
+        <attr name="navigationTextColor" format="color" />
+        <attr name="tabUnselectedTextColor" format="color" />
+
+    </declare-styleable>
+
 </resources>
