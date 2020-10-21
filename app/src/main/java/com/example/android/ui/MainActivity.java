@@ -9,7 +9,6 @@ import com.example.android.R;
 import com.example.android.base.BaseActivity;
 import com.example.android.databinding.ActivityMainBinding;
 import com.example.android.ui.fragments.HomeFragment;
-import com.example.android.utils.CustomDownloader;
 
 import java.io.File;
 
