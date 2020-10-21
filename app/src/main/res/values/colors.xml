@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#222140</color>
-    <color name="colorPrimaryDark">#222140</color>
-    <color name="colorAccent">#3C3C55</color>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#ffffff</color>
+    <color name="colorAccent">#ffffff</color>
     <color name="darkPrimary1">#6E7CFF</color>
     <color name="darkPrimary2">#ED576A</color>
     <color name="errorColor">#FE5461</color>
@@ -21,15 +21,22 @@
     <color name="darkLightGrey">#80ffffff</color>
     <color name="darkIconFill">#22223F</color>
     <color name="lightPrimary2">#ED576A</color>
+    <!-- light theme text color  -->
     <color name="lightShadeText1">#32323C</color>
+    <!-- light theme background color and header color  -->
+    <color name="white">#ffffff</color>
+    <!-- light theme secondary background color. use for dividers and status bar  -->
+    <color name="lightBackground2">#E4E4E4</color>
+    <!--  window background color  -->
+    <color name="lightBackground1">#F2F2F2</color>
     <color name="lightText1HalfAlpha">#8032323C</color>
     <color name="lightText2">#555588</color>
     <color name="lightText3">#8A8A8F</color>
     <color name="lightText4">#D2D2D8</color>
-    <color name="lightBackground1">#F2F2F2</color>
-    <color name="lightBackground2">#E4E4E4</color>
     <color name="lightText5">#CCF8F8FA</color>
     <color name="lightText6">#90909F</color>
     <color name="shimmerColor">#66FFFFFF</color>
     <color name="primary_light">#FAFAFA</color>
+
+    <color name="hint_color">#B0B0B0</color>
 </resources>
